@@ -246,7 +246,11 @@
         </a>
     </div>
     <!-- /.carousel -->
-
+    <!--
+    ####################################################
+    DESTACADOS
+    ####################################################
+    -->
     <section>
         <div class="container mt-5 my-md-4">
             <div class="row">
@@ -292,6 +296,11 @@
 
             </div>
         </div>
+        <!--
+    ####################################################
+    BANDANAS
+    ####################################################
+    -->
         <div id="id_bandanas" class="container mt-5 my-md-4">
             <div class="row">
                 <div class="col-12 text-center">
@@ -335,6 +344,11 @@
 
             </div>
         </div>
+        <!--
+    ####################################################
+    COLLARES
+    ####################################################
+    -->
         <div id="id_collares" class="container mt-5 my-md-4">
             <div class="row">
                 <div class="col-12 text-center">
@@ -354,6 +368,10 @@
                                 <p class="card-text">Collar Humita con incrustación de perlas brillantes.</p>
                                 <p class="card-text"><small class="text-muted">COD. 9CV45</small></p>
                             </div>
+                            <div id="prod1" class="card-footer">
+                                <button type="button" class="btn btn-success" onclick="loadDoc1()">Agregar al
+                                    Carrito</button>
+                            </div>
                         </div>
                         <div class="card">
                             <a href=""><img src="../../img/productos/51DmDoiW-IL._AC_SX679_.jpg" class="card-img-top"
@@ -363,6 +381,10 @@
                                 <p class="card-text">Collar rosado para gatita, incluye campanita.</p>
                                 <p class="card-text"><small class="text-muted">COD 41ACX</small></p>
                             </div>
+                            <div id="prod2" class="card-footer">
+                                <button type="button" class="btn btn-success" onclick="loadDoc2()">Agregar al
+                                    Carrito</button>
+                            </div>
                         </div>
                         <div class="card">
                             <a href=""><img src="../../img/productos/71oVWm+rUuL._AC_SX503_.jpg" class="card-img-top"
@@ -371,6 +393,10 @@
                                 <h5 class="card-title">Collar Perlas</h5>
                                 <p class="card-text">Collar para perrita rosado, con adornos de metal brilloso.</p>
                                 <p class="card-text"><small class="text-muted">COD. 71ODF</small></p>
+                            </div>
+                            <div id="prod3" class="card-footer">
+                                <button type="button" class="btn btn-success" onclick="loadDoc3()">Agregar al
+                                    Carrito</button>
                             </div>
                         </div>
                     </div>
@@ -465,7 +491,40 @@
         </footer>
 
 
+<script>
+    function loadDoc1() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
 
+            document.getElementById("prod1").innerHTML = this.responseText;
+            
+        }
+        xhttp.open("GET", "carrito.txt");
+        xhttp.send();
+    }
+
+    function loadDoc2() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+
+    document.getElementById("prod2").innerHTML = this.responseText;
+
+    }
+    xhttp.open("GET", "carrito.txt");
+    xhttp.send();
+    }
+
+    function loadDoc3() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+
+    document.getElementById("prod3").innerHTML = this.responseText;
+
+    }
+    xhttp.open("GET", "carrito.txt");
+    xhttp.send();
+    }
+</script>
 
 
 </body>
